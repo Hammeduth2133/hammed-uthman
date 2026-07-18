@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Academic Planner | Hammed Uthman</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@500;600;700&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="header-inner">
+    <a href="index.html" class="brand">Hammed<span>.</span>dev</a>
+    <button class="nav-toggle" id="navToggle" aria-expanded="false" aria-controls="primaryNav">☰ Menu</button>
+    <nav class="tabs" id="primaryNav" aria-label="Primary">
+      <a href="index.html">Home</a>
+      <a href="about.html">About Me</a>
+      <a href="projects.html">Projects</a>
+      <a href="planner.html" class="active">Planner</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<main class="container">
+
+  <section>
+    <span class="eyebrow">Academic Planner</span>
+    <h1>Keep Your Assignments in Line</h1>
+    <p>Add a task, set its priority and due date, then check it off when
+      it's done. Everything below is powered by JavaScript — no page
+      reloads. Tasks are saved to your browser's local storage, so they'll
+      still be here next time you visit.</p>
+  </section>
+
+  <!-- ===================== ADD-TASK FORM ===================== -->
+  <section class="divider-top">
+    <form class="planner-form" id="taskForm">
+      <input type="text" id="taskTitle" placeholder="Task, e.g. 'Finish CS lab report'" required aria-label="Task title">
+      <input type="date" id="taskDue" aria-label="Due date">
+      <select id="taskPriority" aria-label="Priority">
+        <option value="low">Low priority</option>
+        <option value="medium" selected>Medium priority</option>
+        <option value="high">High priority</option>
+      </select>
+      <button type="submit" class="btn btn-primary">Add Task</button>
+    </form>
+
+    <!-- Live stats, updated by script.js -->
+    <div class="planner-stats" id="plannerStats">
+      <span>Total: <strong id="statTotal">0</strong></span>
+      <span>Completed: <strong id="statCompleted">0</strong></span>
+      <span>Remaining: <strong id="statRemaining">0</strong></span>
+    </div>
+
+    <!-- Tasks are rendered here by JavaScript -->
+    <ul class="task-list" id="taskList"></ul>
+
+    <!-- Shown by script.js when the list is empty -->
+    <p class="empty-state" id="emptyState">No tasks yet — add your first assignment above.</p>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <p>&copy; 2026 Hammed Uthman · Miva Open University · <a href="contact.html">Say hello</a></p>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
